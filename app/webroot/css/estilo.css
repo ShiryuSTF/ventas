@@ -1,0 +1,84 @@
+/*colores*/
+.main-color{
+	background-color: rgb(8, 161, 247);
+}
+.pie
+{    
+    text-align:center;
+    width:100%;
+    padding:20px 0 20px 0;    
+    background-color:rgb(8, 161, 247);    
+    
+    bottom:0;
+}
+.icon-tamano{
+	font-size: 20px;
+	color:rgb(8, 161, 247);
+}
+.oculto{
+	display:none;
+}
+/******************validaciones***************************/
+
+form .required label:after {
+	color: #000;
+	content: '*';
+	display:inline;
+}
+
+form .error,
+form .error-message {
+	color: red;	
+	font-weight: bold;
+}
+/* boton especial */
+.button>a{
+	font-family: arial;
+	color:#51BAA4;;
+}
+.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		border-radius: 2.5em;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;		
+		font-weight: 700;
+		height: 2.85em;
+		line-height: 2.95em;
+		min-width: 10em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+.button.icon:before {
+	margin-right: 0.5em;
+}
+.button {	
+	background-color: #25383B;
+	box-shadow: none;
+	color: #fff !important;
+}
+
+.button.small {
+	font-size: 0.8em;	
+}
+.button.alt {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px #51BAA4;
+	color: #51BAA4 !important;
+}
+/*estilo a boton de eliminar */
+#eliminar > a{
+	color:#fff;
+	text-decoration: none;
+}
+
