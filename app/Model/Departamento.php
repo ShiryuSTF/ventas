@@ -5,7 +5,7 @@ class Departamento extends AppModel{
 	public $hasMany=array(
 				'Cliente'=>array(
 					'className'=>'Cliente',
-					'foreignKey'=>'cliente_id',					
+					'foreignKey'=>'departamento_id',					
 					'depend'=>false
 				)
 			);

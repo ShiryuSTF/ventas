@@ -5,7 +5,7 @@ class Distrito extends AppModel{
 	public $hasMany=array(
 				'Cliente'=>array(
 					'className'=>'Cliente',
-					'foreignKey'=>'cliente_id',					
+					'foreignKey'=>'distrito_id',					
 					'depend'=>false
 				)
 			);

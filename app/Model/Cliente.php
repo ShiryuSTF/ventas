@@ -35,25 +35,25 @@
 							'rule' => array('maxLength', '8'),
 			            	'message' => 'El DNI es incorrecto.'
 						)
-					),
-					'telefono'=>array(//^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$
-						'notEmpty'=>array(
-							'rule'=>array('custom','^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$'),
-							'message'=>'El teléfono es incorrecto.'
-						)
-					),
+					),					
 					'fechanacimiento'=>array(						
 						'date'=>array(
 							'rule'=>'date',
 							'message'=>'La fecha es incorrecta.'
 						)
-					),
+					),					
+					'domicilio'=>array(						
+						'notEmpty'=>array(
+							'rule'=>'notEmpty',
+							'message'=>'Este campo es obligatorio.'
+						)
+					)/*,
 					'email'=>array(						
 						'email'=>array(
 							'rule'=>'email',
 							'message'=>'El email es incorrecto.'
 						)
-					),
+					)*/
 				);
 		public $belongsTo=array(			
 					'Departamento'=>array(
@@ -67,7 +67,7 @@
 					'Distrito'=>array(
 						'className'=>'Distrito',
 						'foreignKey'=>'distrito_id'
-					),
+					)
 				);
 		public $hasMany=array(
 					'Detallecompra'=>array(

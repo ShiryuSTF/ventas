@@ -21,43 +21,37 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
+	<?php echo $this->Html->meta(array('http-equiv'=>'X-UA-Compatible','content'=>'IE=edge')); ?>	
+	<?php echo $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no')); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css(array('bootstrap.min','estilo'));
+		echo $this->Html->script(array('jquery-1.11.3.min','bootstrap.min'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script type='text/javascript' >		
+		var basePath="<?php echo Router::url('/'); ?>";//url raiz de nuestro proyecto - usado para carrito
+	</script>
 </head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+<body role="document">
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<?php echo $this->element('menu'); ?>
+	</nav>
+	<br><br><br><br><br>
+	<div class="container theme-showcase" role="main">
+      
+		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->fetch('content'); ?>
 
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

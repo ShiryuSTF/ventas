@@ -6,7 +6,7 @@ class Detallecompra extends AppModel{
 				'Cliente'=>array(
 					'className'=>'Cliente',
 					'foreignKey'=>'cliente_id'
-				)		
+				),	
 				'Producto'=>array(
 					'className'=>'Producto',
 					'foreignKey'=>'producto_id'
