@@ -3,54 +3,40 @@
 	class Producto extends AppModel{
 	
 		public $validate=array(
-					'nombre'=>array(
+					'descripcion'=>array(
 						'notEmpty'=>array(
 							'rule'=>'notEmpty',
 							'message'=>'Este campo es obligatorio.'
 						)
 					),
-					'apellido'=>array(
-						'notEmpty'=>array(
-							'rule'=>'notEmpty',
-							'message'=>'Este campo es obligatorio.'
-						)
-					),
-					'dni'=>array(
+					'precio'=>array(
 						'notEmpty'=>array(
 							'rule'=>'notEmpty',
 							'message'=>'Este campo es obligatorio.'
 						),
-						'unique'=>array(
-							'rule'=>'isUnique',
-							'message'=>'El DNI ya esta registrado.'				
+						'numeric'=>array(
+							'rule'=>'numeric',
+							'message'=>'Solo se permiten números'
 						),
-						'minLength'=>array(
-							'rule' => array('minLength', '8'),
-			            	'message' => 'El DNI es incorrecto'
-						),
-						'maxLength'=>array(
-							'rule' => array('maxLength', '8'),
-			            	'message' => 'El DNI es incorrecto.'
+						'mayor' => array(
+							'rule' => array('comparison', '>=', 0),
+							'message' => 'El precio debe ser mayor que 0'
 						)
 					),
-					'telefono'=>array(//^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$
+					'stock'=>array(
 						'notEmpty'=>array(
-							'rule'=>array('custom','^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$'),
-							'message'=>'El teléfono es incorrecto.'
+							'rule'=>'notEmpty',
+							'message'=>'Este campo no puede estar vacio.'
+						),
+						'numeric'=>array(
+							'rule'=>'numeric',
+							'message'=>'Solo se permiten números'
+						),
+						'mayor' => array(
+							'rule' => array('comparison', '>=', 0),
+							'message' => 'El stock no puede ser negativo'
 						)
-					),
-					'fechanacimiento'=>array(						
-						'date'=>array(
-							'rule'=>'date',
-							'message'=>'La fecha es incorrecta.'
-						)
-					),
-					'email'=>array(						
-						'email'=>array(
-							'rule'=>'email',
-							'message'=>'El email es incorrecto.'
-						)
-					),
+					)
 				);
 		public $belongsTo=array(			
 					'Categoria'=>array(
