@@ -29,9 +29,9 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Flujo <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></a>
               <ul class="dropdown-menu">                                                              
-                <li><?php echo $this->Html->link('Ingresos por mes',array('controller'=>'','action'=>'')) ?></li>                
+                <li><?php echo $this->Html->link('Realizar venta',array('controller'=>'ventas','action'=>'buy')) ?></li>                
               </ul>
             </li>
           </ul>

@@ -45,8 +45,8 @@
 					)
 				);
 		public $hasMany=array(
-					'Detallecompra'=>array(
-						'className'=>'Detallecompra',
+					'Detalleventa'=>array(
+						'className'=>'Detalleventa',
 						'foreignKey'=>'producto_id',					
 						'depend'=>false
 					)

@@ -3,7 +3,7 @@
 		public $paginate =array(
 			'limit'=>10,
 			'order'=>array(
-				'Producto.descripcion'=>'asc'
+				'Producto.categoria_id'=>'asc'
 				)
 		);	
 		
@@ -11,7 +11,7 @@
 			$this->Producto->recursive = 0;
 
 			$this->paginate['Producto']['limit']=10;
-			$this->paginate['Producto']['order']=array('Producto.descripcion'=>'asc');
+			$this->paginate['Producto']['order']=array('Producto.categoria_id'=>'asc');
 			$this->paginate['Producto']['conditions']=array('Producto.estado'=>'a');
 
 			$this->set('productos',$this->paginate());		

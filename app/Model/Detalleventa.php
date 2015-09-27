@@ -1,11 +1,11 @@
 <?php 
 
-class Detallecompra extends AppModel{
+class Detalleventa extends AppModel{
 
 	public $belongsTo=array(	
-				'Cliente'=>array(
-					'className'=>'Cliente',
-					'foreignKey'=>'cliente_id'
+				'Venta'=>array(
+					'className'=>'Venta',
+					'foreignKey'=>'venta_id'
 				),	
 				'Producto'=>array(
 					'className'=>'Producto',
